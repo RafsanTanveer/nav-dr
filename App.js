@@ -3,8 +3,10 @@ import * as React from "react";
 import { Pressable, View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import TreeView from "react-native-final-tree-view";
 import Home from "./screens/Home";
 import CE from "./screens/civil/CE";
+import SDE from "./screens/civil/SDE";
 
 // function Home({ navigation }) {
 //   return (
@@ -52,6 +54,7 @@ const CustomDrawer = () => {
     <Drawer.Navigator>
       <Drawer.Screen name="Home" component={Home} />
       <Drawer.Screen name="Chief Engineer (Civil)" component={CE} />
+      <Drawer.Screen name="Sub-divisional Engineer (Civil)" component={SDE} />
       <Drawer.Screen name="Conference" component={Conference} />
       <Drawer.Screen name="Story" component={Story} />
     </Drawer.Navigator>
