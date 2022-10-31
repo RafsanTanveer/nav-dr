@@ -5,6 +5,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import Home from "./screens/Home";
 import CE from "./screens/civil/CE";
+import ACE from "./screens/civil/ACE";
+import SE from "./screens/civil/SE";
+import AE from "./screens/civil/AE";
+import SDE from "./screens/civil/SD";
+import XEN from "./screens/civil/XEN";
 
 // function Home({ navigation }) {
 //   return (
@@ -52,7 +57,11 @@ const CustomDrawer = () => {
     <Drawer.Navigator>
       <Drawer.Screen name="Home" component={Home} />
       <Drawer.Screen name="Chief Engineer (Civil)" component={CE} />
-      <Drawer.Screen name="Conference" component={Conference} />
+      <Drawer.Screen name="Addl. Chief Engineer (Civil)" component={ACE} />
+      <Drawer.Screen name="Superintendent Engineer (Civil)" component={SE} />
+      <Drawer.Screen name="Executive Engineer (Civil)" component={XEN} />
+      <Drawer.Screen name="Sub-divisional Engineer (Civil)" component={SDE} />
+      <Drawer.Screen name="Assistant Engineer (Civil)" component={AE} />
       <Drawer.Screen name="Story" component={Story} />
     </Drawer.Navigator>
   );
