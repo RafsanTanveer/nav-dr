@@ -1,60 +1,24 @@
 import "react-native-gesture-handler";
 import * as React from "react";
-import { Pressable, View, Text } from "react-native";
+import { Pressable, View, Text, TouchableOpacity } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createDrawerNavigator, DrawerContentScrollView, DrawerItem, DrawerItemList } from "@react-navigation/drawer";
 import Home from "./screens/Home";
 import CE from "./screens/civil/CE";
 import ACE from "./screens/civil/ACE";
 import SE from "./screens/civil/SE";
 import AE from "./screens/civil/AE";
-import SDE from "./screens/civil/SD";
+import SDE from "./screens/civil/SDE";
 import XEN from "./screens/civil/XEN";
 
-// function Home({ navigation }) {
-//   return (
-//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-//       <Text>Welcome to our Home Screen</Text>
-//       <Text>Checkout screens from the tab below</Text>
-//       <Pressable onPress={() => navigation.openDrawer()} style={{ padding: 10, marginBottom: 10, marginTop: 10 }}>
-//         <Text>Open Drawer</Text>
-//       </Pressable>
-//     </View>
-//   );
-// }
 
-function Conference({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text style={{ fontSize: 20 }}>Conference Details</Text>
-      <Pressable onPress={() => navigation.navigate("Story")} style={{ padding: 10, marginBottom: 10, marginTop: 10 }}>
-        <Text>Go to Story</Text>
-      </Pressable>
-      <Pressable onPress={() => navigation.openDrawer()} style={{ padding: 10, marginBottom: 10, marginTop: 10 }}>
-        <Text>Open Drawer</Text>
-      </Pressable>
-    </View>
-  );
-}
+import DrawerContent from "./screens/DrawerContent";
 
-function Story({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text style={{ fontSize: 20 }}>Our Story</Text>
-      <Pressable onPress={() => navigation.navigate("Conference")} style={{ padding: 10, marginBottom: 10, marginTop: 10 }}>
-        <Text>Go to Conference</Text>
-      </Pressable>
-    </View>
-  );
-}
 
-const UserInfoView = () => {
-  return <View style={{ backgroundColor: "red" }}></View>;
-};
 
 const CustomDrawer = () => {
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator drawerContent={(props) => <DrawerContent {...props}  />}>
       <Drawer.Screen name="Home" component={Home} />
       <Drawer.Screen name="Chief Engineer (Civil)" component={CE} />
       <Drawer.Screen name="Addl. Chief Engineer (Civil)" component={ACE} />
@@ -62,7 +26,6 @@ const CustomDrawer = () => {
       <Drawer.Screen name="Executive Engineer (Civil)" component={XEN} />
       <Drawer.Screen name="Sub-divisional Engineer (Civil)" component={SDE} />
       <Drawer.Screen name="Assistant Engineer (Civil)" component={AE} />
-      <Drawer.Screen name="Story" component={Story} />
     </Drawer.Navigator>
   );
 };
