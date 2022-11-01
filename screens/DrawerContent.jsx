@@ -19,9 +19,9 @@ const DrawerContent = (props) => {
                 <DrawerItemList {...props} />
                 {/* {getExpandableView(props)} */}
             </DrawerContentScrollView>
-            {/* <DrawerItem label={"sdf"} onPress={(props) => { props.navigation.navigate('Home') }}  >
+            <DrawerItem label={"sdf"} onPress={(props) => { props.navigation.openDrawer() }}  >
               
-            </DrawerItem> */}
+            </DrawerItem> 
             <View style={{ marginLeft: 20 }}>
                 <TouchableOpacity onPress={() => { }}>
                     <Text>Update</Text>

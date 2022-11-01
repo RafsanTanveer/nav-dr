@@ -11,10 +11,9 @@ import AE from "./screens/civil/AE";
 import SDE from "./screens/civil/SDE";
 import XEN from "./screens/civil/XEN";
 
-
 import DrawerContent from "./screens/DrawerContent";
 
-
+const Drawer = createDrawerNavigator();
 
 const CustomDrawer = () => {
   return (
@@ -30,12 +29,11 @@ const CustomDrawer = () => {
   );
 };
 
-const Drawer = createDrawerNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <CustomDrawer />
+      <CustomDrawer  />
     </NavigationContainer>
   );
 }
